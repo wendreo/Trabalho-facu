@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="salao">
+	<head>
+		<title>Salão</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/ng-notify.min.css">
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<!-- inject:css -->
+  	<link rel="stylesheet" href="src/login/login.css">
+  	<link rel="stylesheet" href="src/main/main.css">
+  	<link rel="stylesheet" href="src/styles/main.css">
+  	<link rel="stylesheet" href="src/bootstrap/css/bootstrap.css">
+  	<link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+  	<!-- endinject -->
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+		  <!-- Header -->
+			<header ng-include="'src/main/header.html'" id="header"></header>
+		  <!-- Menu -->
+			<section id="menu" ng-controller="headerSrv">
+				<!-- Links -->
+				<section ng-include="'src/main/menu.html'"></section>
+			</section>
+		  <!-- Main -->
+			<div id="main">
+				<!-- Post -->
+				<article class="post">
+					<ng-view />
+
+				</article>
+			</div>
+		</div>
+         <center>
+					    <div class="footer">
+					      <div class="container">
+					        <p><span class="glyphicon glyphicon-heart"></span> 2016 Salão de Beleza !
+					          Todos os direitos reservados.</span></p>
+					      </div>
+					    </div>
+
+       </center>
+
+
+        <script src="js/jquery.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/jquery.mask.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
+		<script src="js/angular-cookies.min.js"></script>
+		<script src="js/ngStorage.min.js"></script>		
+		<script src="js/skel.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/ie/html5shiv.js"></script>
+		<script src="js/ie/respond.min.js"></script>
+		<script src="js/MascaraValidacao.js"></script>
+
+		<!-- https://github.com/vitalets/checklist-model -->
+		<!-- http://vitalets.github.io/checklist-model/ -->
+		<script src="js/checklist-model.js"></script>
+
+		<!-- https://github.com/matowens/ng-notify -->
+		<!-- http://matowens.github.io/ng-notify/ -->
+		<script src="js/ng-notify.min.js"></script> <!--  -->
+
+		<!-- inject:js -->
+	  <script src="src/index.js"></script>
+	  <script src="src/Agendamento/agendamento.js"></script>
+	  <script src="src/BuscarAgendamentoPorData/buscarAgendamento.js"></script>
+	  <script src="src/Cadastro/cadastro.js"></script>
+	  <script src="src/editUser/editUser.js"></script>
+	  <script src="src/Funcionario/funcionario.js"></script>
+	  <script src="src/home/home.js"></script>
+	  <script src="src/login/login.js"></script>
+	  <script src="src/login/login.logout.service.js"></script>
+	  <script src="src/main/header.js"></script>
+	  <script src="src/main/main.js"></script>
+	  <script src="src/MostrarAgendamento/mostrarAgendamento.js"></script>
+	  <script src="src/pesquisaFuncionario/pesquisaFuncionario.js"></script>
+	  <script src="src/userTable/usertable.js"></script>
+	  <script src="src/user/user.js"></script>
+	  <script src="src/utils/interceptor.js"></script>
+	  <script src="src/utils/util.filter.js"></script>
+	  <script src="src/utils/util.service.js"></script>
+	  <script src="src/bootstrap/js/bootstrap.js"></script>
+	  <script src="src/bootstrap/js/bootstrap.min.js"></script>
+	  <!-- endinject -->
+	  
+	   <script src="Mascara/mask.js"></script>
+	  
+	  
+	  
+	</body>
+</html>

@@ -1,0 +1,72 @@
+
+
+  <div>
+
+,
+        <form name="theForm"  ng-submit="buscaFuncionario(busca)"  >
+
+                <br>
+                   <button type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-danger btn-s">Voltar </button>
+                 <br><br>
+
+                <center> <h1 > Pesquisar Agendamento por Data</h1></center>
+
+                <div class="blocktext">
+
+
+                  <div >
+
+                    <button type="reset"  class="btn btn-danger btn-s">
+                      <span class="glyphicon glyphicon-trash"></span>Limpar Nome</button>
+
+                     <br><br>
+                         <input   type="text" placeholder="Nome Funcionario" ng-model="busca.data" />
+                       <br/>
+
+               <button  type="Submit"  class="btn btn-danger btn-s" >Pesquisar</button>
+
+
+    </div>
+
+
+  </form>
+
+
+ <!--  <pre >{{fs   | json}}</pre> -->
+
+
+</div>
+
+
+<div>
+  <br/><h3>Agendamentos</h3><br><br><br>
+          <table>
+            <thead>
+                <tr>
+                  <th>Dia da Semana</th>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+
+
+                <th></th>
+                <th></th>
+                </tr>
+                </thead>
+                <tbody>
+               <tr ng-repeat="busca in buscas">
+
+               <td>{{ busca.diaSemana }}</td>
+               <td>{{ busca.data }}</td>
+               <td>{{ busca.horario }}</td>
+               <td>{{ busca.idUser.name }}</td>
+               <td>{{ busca.idUser.email }}</td>
+               <td>{{ busca.idUser.telefone }}</td>
+
+
+              </tr>
+            </tbody>
+          </table>
+          </div>

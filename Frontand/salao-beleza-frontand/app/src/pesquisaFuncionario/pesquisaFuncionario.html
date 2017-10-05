@@ -1,0 +1,64 @@
+
+
+<a  ng-hide="!showA" ng-click="show()" > </a>
+<form>
+
+<div class="blocktext">
+
+  <div class="form-group input-group">
+     <label>Funcionários</label>
+
+       <br><br>
+         <br/>
+          <i class="fa fa-search"></i>
+          <select  ng-model="busca">
+           <option ng-repeat="f in fs"  value="{{f.funcionario}}">{{f.funcionario}}</option>
+             </select>
+
+             </div>
+
+     </br>
+
+
+  </div>
+  </form>
+ <!--  <pre >{{fs   | json}}</pre> -->
+
+</div>
+
+          <table ng-hide="showA">
+            <thead  >
+                <tr>
+
+    <th onClick="history.go(0)">Atualizar</th>
+
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Fone</th>
+
+
+                  <th>CPF</th>
+                  <th>RG</th>
+                  <th>Empresa</th>
+                  <th>Funçao</th>
+
+
+
+                </tr>
+                </thead>
+                <tbody>
+               <tr ng-repeat="f in fs|filter:busca">
+
+               <td onClick="history.go(0)"> <i class="glyphicon glyphicon-refresh"></i></td>
+               <td>{{ f.funcionario }}</td>
+               <td>{{f.email }}</td>
+               <td>{{f.fone }}</td>
+               <td>{{f.cpf }}</td>
+               <td>{{f.rg }}</td>
+               <td>{{f.empresa }}</td>
+               <td>{{f.funcao }}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>

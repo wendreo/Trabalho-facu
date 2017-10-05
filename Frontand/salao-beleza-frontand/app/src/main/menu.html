@@ -1,0 +1,51 @@
+<section>
+<center>
+    <ul class="links"  class="list-group">
+
+      <div >
+
+         <h3 ng-show="authDetails.authenticated">
+           <a href="#/">
+                 <img ng-src="../../images/voltar.png" width="30"   class="img-circle img80_80"  />
+            </a>
+
+           </h3>
+           </div>
+
+        <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO','ROLE_CLIENTE'])">
+            <p><a class="btn btn-lg btn-success" ng-href="#/editUser">Editar dados!
+               <span class="glyphicon glyphicon-ok"></span></a></p>  </li>
+
+
+
+
+               <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/user"><font color="blue">Usuários</font></a></li>
+               <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/Funcionario"><font color="blue">Funcionários</font></a></li>
+               <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO','ROLE_CLIENTE'])"><a href="#/Agendamento"><font color="blue"><h4>Agendar Horário</h4></font></a></li>
+               <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO'])"><a href="#/MostrarAgendamento"><font color="blue"><h4>Agendamento</h4></font> </a></li>
+
+
+
+
+
+    <li >
+        <p><a ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO','ROLE_CLIENTE'])"
+          class="list-group-item" ng-show="authDetails.authenticated" href="#/" ng-click="logout()">Logout</a></p>
+              </li>
+             </ul>
+
+         <li ng-show="!authDetails.authenticated">
+             <p><a  ng-href="#/Cadastro"><font color="blue"><h3>Cadastrar!</h3></font>
+               <span class="glyphicon glyphicon-ok"></span></a></p>
+         </li>
+
+
+           <li ng-show="!authDetails.authenticated">
+             <a href="#/" ng-click="logout()">
+               <font color="blue"><h3>Logout</h3></font></a>
+             </li>
+
+
+</center>
+
+</section>

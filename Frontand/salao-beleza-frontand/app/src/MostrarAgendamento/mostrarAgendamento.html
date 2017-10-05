@@ -1,0 +1,33 @@
+<div>
+  <br/><h3>Clientes Agendados</h3><br/><br/><br/>
+  <table>
+    <thead>
+      <tr>
+       <th>Funcionário</th>
+
+        <th>data</th>
+        <th>hora</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="agenda in agendas">
+        <td>{{ agenda.funcid.funcionario }}</td>
+
+        <td><font color="red">{{agenda.data | date : "dd/MM/yyyy " }}</font></td>
+        <td>{{ agenda.hora.horario }}</td>
+        <td>{{ agenda.idUser.name}}</td> <!-- Nome do Apartamento do Usuário  morador na tabela Apartamento-->
+        <td>{{ agenda.idUser.email}}</td> <!-- Nome do Usuário  na tabela UserEntity-->
+        <td>{{ agenda.idUser.telefone}}</td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

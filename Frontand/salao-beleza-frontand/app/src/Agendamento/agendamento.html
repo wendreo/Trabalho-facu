@@ -1,0 +1,175 @@
+<!--
+<div>
+  <button type="button" ng-hide="showA" ng-click="show()">
+  Novo Agendamento
+  </button>
+   ng-hide="!showA"
+-->
+
+  <form ng-submit="saveAgendamento(ag)"  ng-hide="!showA">
+
+    <div>
+
+      <label>Funcionários</label>
+      <div >
+        <select  ng-model="ag.funcid.id">
+           <option ng-repeat="p in ps" value="{{p.id}}">
+
+
+             Profissional:{{p.funcionario}}
+             Função: {{p.funcao}}
+
+
+           </option>
+         </select>
+      </div>
+    </div>
+
+   <br>
+
+    <div>
+      <label>Data</label>
+      <input type="date" placeholder="Data" ng-model="ag.data" >
+    </div>
+
+
+    <div>
+
+      <label>Horários</label>
+      <div >
+        <select  ng-model="ag.horaid.id">
+           <option ng-repeat="h in hs" value="{{h.id}}">
+
+
+             Hora:{{h.horario}}
+
+
+
+           </option>
+         </select>
+      </div>
+    </div>
+
+ <br>
+
+
+
+    <button type="submit">AGENDAR</button>
+    <button type="button" ng-click="hide()">Cancel</button>
+
+  <br>
+  </form>
+    <table  ng-hide="showA" ng-click="show()">
+         <br>
+
+
+          <div >
+              <label ng-hide="showA"><font color="blue">Pesquisar por Funcionários</font></label>
+
+            <select  ng-model="busca" ng-hide="showA" >
+
+               <option ng-repeat="p in ps" value="{{p.funcionario}}">
+
+                  Profissional:{{p.funcionario}}
+                  Função: {{p.funcao}}
+
+               </option>
+             </select>
+          </div>
+        </div>
+        <br><br>
+
+
+      <thead>
+        <tr>
+          <!--
+          <th><font color="green">FUNCIONÁRIO</font></th>
+          <th>data</th>
+          <th>hora</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          -->
+
+          <th><center><font color="green">  (CLIQUE AQUI PARA AGENDAR UM HORÁRIO!)</center></font></th>
+
+
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="m in ms|filter:busca">
+         <!--
+          <td><font color="blue">{{ m.ap.funcionario }}</font></td>
+          <td><font color="red">{{m.data | date : "dd/MM/yyyy " }}</font></td>
+          <td>{{ m.hora.horario }}</td>
+          <td>{{ m.idUser.email}}</td>
+          <td>{{ m.idUser.telefone}}</td>
+         -->
+
+          <td>
+           <font color="blue">Dia:
+          <font color="red">{{m.data | date : "dd/MM/yyyy " }}</font>
+           entre {{ m.horaid.horario }},
+          <font color="green">o cliente</font> :{{m.idUser.name}};
+            <font color="orange">{{ m.idUser.email}}; {{ m.idUser.telefone}}</font>,
+          está Agendado {{ m.hora.tipo }} para
+          o (a) <font color="green">funcionário(a):</font>{{ m.funcid.funcionario }} {{ m.funcid.funcao }}
+
+           </font>
+           </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+<!--
+  <div>
+    <br/><h3>Agendar clientes</h3>
+    <table ng-hide="showA">
+      <thead>
+        <tr>
+
+
+
+
+          <td>Funcionario</td>
+          <th>Dia da semana</th>
+          <th>data</th>
+          <th>horário</th>
+          <th>Cliente</th>
+          <th>email</th>
+          <th>Telefone</th>
+
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="ag in ags">
+
+          <td>{{ ag.ap.funcionario }}</td>
+
+          <td>{{ ag.diaSemana }}</td>
+          <td>{{ ag.data }}</td>
+          <td>{{ ag.horario }}</td>
+          <td><font color="red">{{ ag.idUser.name}}</font></td>
+          <td>{{ ag.idUser.email}}</td>
+          <td>{{ ag.idUser.telefone }}</td>
+
+
+          <td><button ng-click="editAgendamento(ag)" class="btn btn-success btn-s" >Aualizar</button></td>
+          <td><button ng-click="deleteAgendamento(ag)" class="btn btn-danger btn-s"> <span class="glyphicon glyphicon-trash">
+          </span>Retirar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+-->
+</div>

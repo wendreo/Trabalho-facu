@@ -1,0 +1,48 @@
+
+<div >
+
+   <h3 ng-show="authDetails.authenticated">
+     <a href="#/">
+           <img ng-src="../../images/voltar.png" width="30"   class="img-circle img80_80"  />
+      </a>
+
+     </h3>
+     </div>
+
+
+<nav class="links" ng-controller="headerSrv" md-position-mode>
+   <ul>
+
+
+     <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO','ROLE_CLIENTE'])"><a href="#/Agendamento"><font color="black"><h4>Agendar Horário</h4></font></a></li>
+     <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO'])"><a href="#/MostrarAgendamento"><font color="black"><h4>Agendamento</h4></font> </a></li>
+
+
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/user"><font color="black"><h6>Usuários</h6></font></a></li>
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO','ROLE_CLIENTE'])"><a href="#/userTable"><font color="black"><h6>Editar Perfil</h6></font></a></li>
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN'])"><a href="#/Funcionario"><font color="black"><h6>Funcionários</h6></font></a></li>
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO'])"><a href="#/pesquisaFuncionario"><font color="black"><h6>Pesquisa Funcionário</h6></font> </a></li>
+
+    <li ng-show="hasAnyPermission(['ROLE_ADMIN','ROLE_FUNCIONARIO'])"><a href="#/BuscarAgendamentoPorData"><font color="black"><h6>Pesquisa Data de agendamento</h6></font> </a></li>
+
+
+    <li ng-show="!authDetails.authenticated"><a href="#/login"><font color="black"><h3>Login</h3></font></a></li>
+
+
+
+
+    <li ng-show="authDetails.authenticated"><a href="#/" ng-click="logout()"><font color="black"><h3>sair</h3></font></a></li>
+
+  </ul>
+
+</nav>
+
+
+
+<nav class="main">
+  <ul>
+    <li class="menu">
+      <a class="fa-bars" href="#menu">Menu</a>
+    </li>
+  </ul>
+</nav>
